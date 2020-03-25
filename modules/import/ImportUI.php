@@ -1714,7 +1714,10 @@ class ImportUI extends UserInterface
                             $db->makeQueryString($doc['email']),
                             $this->_siteID
                         );
-                        if ($db->getColumn($sql, 0, 0) > 0)
+
+                        $countCandidatesDuplicates = $db->getColumn($sql,0,0)[0];
+
+                        if (intval($db->getColumn($sql, 0, 0)[0]) > 0)
                         {
                             $isCandidateUnique = false;
                         }
@@ -1735,7 +1738,7 @@ class ImportUI extends UserInterface
                             $db->makeQueryString($doc['phone']),
                             $this->_siteID
                         );
-                        if ($db->getColumn($sql, 0, 0) > 0)
+                        if (intval($db->getColumn($sql, 0, 0)[0]) > 0)
                         {
                             $isCandidateUnique = false;
                         }
@@ -1752,7 +1755,7 @@ class ImportUI extends UserInterface
                             $db->makeQueryString($doc['zipCode']),
                             $this->_siteID
                         );
-                        if ($db->getColumn($sql, 0, 0) > 0)
+                        if (intval($db->getColumn($sql, 0, 0)[0]) > 0)
                         {
                             $isCandidateUnique = false;
                         }

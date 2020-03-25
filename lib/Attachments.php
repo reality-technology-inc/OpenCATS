@@ -767,9 +767,7 @@ class Attachments
                 date_created as dateCreated,
                 date_modified as dateModified,
                 directory_name as directoryName,
-                file_size_kb as fileSizeKB,
-                stored_on_s3 as storedOnS3,
-                stored_locally as storedLocally
+                file_size_kb as fileSizeKB
             FROM
                 attachment
             WHERE
