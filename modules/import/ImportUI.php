@@ -1715,8 +1715,6 @@ class ImportUI extends UserInterface
                             $this->_siteID
                         );
 
-                        $countCandidatesDuplicates = $db->getColumn($sql,0,0)[0];
-
                         if (intval($db->getColumn($sql, 0, 0)[0]) > 0)
                         {
                             $isCandidateUnique = false;
